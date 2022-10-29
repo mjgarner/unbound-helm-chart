@@ -45,7 +45,7 @@ securityContext: {}
 service:
   enabled: true
   type: LoadBalancer
-  port: 53
+  port: 9753
   # Additional annotations (e.g. for cloud provider specific config)
   annotations:
     metallb.universe.tf/allow-shared-ip: unbound
