@@ -19,8 +19,8 @@ localRecords:
   ip: "10.12.10.10"
 - name: "fake4.host.net"
   ip: "10.13.10.10"
-- name: "fake3.host.net"
-  ip: "10.14.10.10"  
+- name: "fake5.host.net"
+  ip: "10.15.10.10"  
 
 serviceAccount:
   # Specifies whether a service account should be created
