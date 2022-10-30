@@ -1,30 +1,25 @@
 ## Unbound Helm Chart
+Forked from: https://github.com/ryantiger658/unbound-helm-chart
 
-![release-chart](https://github.com/ryantiger658/unbound-helm-chart/actions/workflows/chart-release.yml/badge.svg)
+![release-chart](https://github.com/mjgarner/unbound-helm-chart/actions/workflows/chart-release.yml/badge.svg)
 
 ### What is Unbound
-Why are you asking me? Google it!
-
 [According to Google:](https://www.nlnetlabs.nl/projects/unbound/about/)
 > Unbound is a validating, recursive, caching DNS resolver. It is designed to be fast and lean and incorporates modern features based on open standards. Late 2019, Unbound has been rigorously audited, which means that the code base is more resilient than ever.
 
 ### How do I use it 
-I like many nerds run a PiHole on my home network to block ads across the network. PiHole works by denying queries to known add urls, and forwarding valid queries to an upstream resolver such as 1.1.1.1 or Google's 8.8.8.8. 
-
-By running Unbound I am able to set my Unbound deployment as the upstream for my PiHole. This allows me to resolve all queries internally based off of authoratitive sources. Meaning even more security... and even less ISP tracking. 
-
-!(seemscrazy)[https://media.giphy.com/media/9hEcsoYAJb3kA/giphy.gif]
-
-(You're not wrong)
+I will be running PiHole in the same cluster to block access to ads sites and other potentially harmful sites. Unbound will operate upstream from PiHole to forward  queries to an upstream resolver such as 1.1.1.1 or Google's 8.8.8.8. The end result will be both faster performance (Unbound caches DNS results and better security (Recurring requests are not forwarded to the upstream DNS services).
 
 ### How to Use This Repo and the Chart Repo
 
-Chart Repo URL:  https://ryantiger658.github.io/unbound-helm-chart/
+Chart Repo URL:  https://mjgarner.github.io/unbound-helm-chart/
 
 Chart Name: unbound
 
 ### To Install
 ```
-helm repo add unbound https://ryantiger658.github.io/unbound-helm-chart/
+helm repo add unbound https://mjgarner.github.io/unbound-helm-chart/
 helm install unbound/unbound deploymentname
 ```
+### Changes to the original source
+I have just built my first k3s cluster and am building a repository of helm charts for my own project. This project is my first published chart and so far the only thing that I changed from the original was the settings for the external port. 
