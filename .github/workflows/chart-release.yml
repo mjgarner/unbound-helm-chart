@@ -1,19 +1,19 @@
-#name: release-chart
-#on:
-#  push:
-#    branches:
-#      - master
-#      - Get-GH-actions-Working
-#
-#jobs:
-#  release-chart:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - name: Publish Helm chart
-#        uses: stefanprodan/helm-gh-pages@master
-#        with:
-#          token: ${{ secrets.CR_TOKEN }}
-#          charts_dir: '.'
-#          linting: off
-#          branch: chart-repo
+name: release-chart24
+on:
+  push:
+    branches:
+      - master
+      - Get-GH-actions-Working
+
+jobs:
+  release-chart:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Helm chart
+        uses: stefanprodan/helm-gh-pages@master
+        with:
+          token: ${{ secrets.CR_TOKEN }}
+          charts_dir: '.'
+          linting: off
+          branch: chart-repo
